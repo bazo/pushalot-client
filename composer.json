@@ -1,0 +1,24 @@
+{
+	"name": "bazo/pushalot-client",
+	"type": "library",
+	"description": "Pushalot client",
+	"keywords": ["pushalot", "notifications"],
+	"homepage": "https://github.com/bazo/pushalot-client",
+	"authors": [
+		{
+			"name": "Martin Bažík",
+			"email": "martin@bazo.sk",
+			"homepage": "http://bazo.sk"
+		}
+	],
+	"minimum-stability": "dev",
+	"require": {
+		"php": ">=5.4.0",
+		"guzzle": "v3.9.1"
+	},
+	"autoload": {
+		"psr-0": {
+			"Bazo": "src/"
+		}
+	}
+}
