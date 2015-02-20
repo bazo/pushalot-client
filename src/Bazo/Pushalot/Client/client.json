@@ -13,63 +13,63 @@
 					"type": "string",
 					"description": "App authorization token which has to be obtained from the user, before being able to send any messages.",
 					"required": true,
-					"filters": ["\\Pushalot\\Client\\InputFilter::validateAuthorizationToken"]
+					"filters": ["\\Bazo\\Pushalot\\Client\\InputFilter::validateAuthorizationToken"]
 				},
 				"Body": {
 					"location": "postField",
 					"type": "string",
 					"description": "An arbitrary string.",
 					"required": true,
-					"filters": ["\\Pushalot\\Client\\InputFilter::validateBody"]
+					"filters": ["\\Bazo\\Pushalot\\Client\\InputFilter::validateBody"]
 				},
 				"Title": {
 					"location": "postField",
 					"type": "string",
 					"description": "Body of the message. Will show in client app in message listing in shortened version and in message detail page in full version, so when possible try to keep most important information in the beginning of the text. Even though body field can store pretty big chunks of text, you should avoid it and rather link to external resource.",
 					"required": false,
-					"filters": ["\\Pushalot\\Client\\InputFilter::validateTitle"]
+					"filters": ["\\Bazo\\Pushalot\\Client\\InputFilter::validateTitle"]
 				},
 				"Link": {
 					"location": "postField",
 					"type": "string",
 					"description": "Enclosed url link, has to be properly formatted in absolute URI form, that is with protocol, host etc.",
 					"required": false,
-					"filters": ["\\Pushalot\\Client\\InputFilter::validateLink"]
+					"filters": ["\\Bazo\\Pushalot\\Client\\InputFilter::validateLink"]
 				},
 				"LinkTitle": {
 					"location": "postField",
 					"type": "string",
 					"description": "Title for enclosed link in the Link field. Can only be specified if Link is specified.",
 					"required": false,
-					"filters": ["\\Pushalot\\Client\\InputFilter::validateLinkTitle"]
+					"filters": ["\\Bazo\\Pushalot\\Client\\InputFilter::validateLinkTitle"]
 				},
 				"isImportant": {
 					"location": "postField",
 					"type": "boolean",
 					"description": "Indicator whether the message should be visually marked as important within client app. Does not have any other implication on message delivery.",
 					"required": false,
-					"filters": ["\\Pushalot\\Client\\InputFilter::convertBooleanToString"]
+					"filters": ["\\Bazo\\Pushalot\\Client\\InputFilter::convertBooleanToString"]
 				},
 				"isSilent": {
 					"location": "postField",
 					"type": "boolean",
 					"description": "If set to True will prevent sending toast notifications to connected devices, resulting in silent delivery, as only badge icon will indicate new message.",
 					"required": false,
-					"filters": ["\\Pushalot\\Client\\InputFilter::convertBooleanToString"]
+					"filters": ["\\Bazo\\Pushalot\\Client\\InputFilter::convertBooleanToString"]
 				},
 				"Image": {
 					"location": "postField",
 					"type": "boolean",
 					"description": "Image thumbnail URL link, has to be properly formatted in absolute form with protocol etc. Recommended image size is 72x72 pixels. Larger images will be scaled down while maintaining aspect ratio. In order to save mobile device data plan, we download images from specified URL on server side and scale it there. This means client apps will never download big images directly by mistake.",
 					"required": false,
-					"filters": ["\\Pushalot\\Client\\InputFilter::validateImageUrl"]
+					"filters": ["\\Bazo\\Pushalot\\Client\\InputFilter::validateImageUrl"]
 				},
 				"Source": {
 					"location": "postField",
 					"type": "boolean",
 					"description": "Notification source name that will be displayed instead of authorization token's app name.",
 					"required": false,
-					"filters": ["\\Pushalot\\Client\\InputFilter::validateSource"]
+					"filters": ["\\Bazo\\Pushalot\\Client\\InputFilter::validateSource"]
 				}
 			}
 		}
